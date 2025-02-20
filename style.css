@@ -1,47 +1,91 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     text-align: center;
-    background-color: #141414;
-    color: white;
+    margin: 0;
+    padding: 0;
 }
 
-h1, h2 {
-    color: #E50914;
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Sections */
+section {
+    background: white;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and Buttons */
+input[type="text"], button {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+input[type="text"] {
+    width: 80%;
 }
 
 button {
-    background-color: #E50914;
+    background-color: #007BFF;
     color: white;
     border: none;
-    padding: 10px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #ff1c1c;
+    background-color: #0056b3;
 }
 
-#chatbox {
-    width: 50%;
-    margin: auto;
-    height: 200px;
-    overflow-y: scroll;
-    background: #333;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-input {
-    padding: 10px;
-    width: 60%;
-}
-
-.emergency-button {
-    display: block;
-    background: red;
-    color: white;
-    padding: 15px;
+/* Emergency Call Link */
+.emergency-call a {
+    display: inline-block;
     text-decoration: none;
+    color: white;
+    background: red;
+    padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.emergency-call a:hover {
+    background: darkred;
+}
+
+/* Mini Games Button */
+.mini-games button {
+    background-color: #28a745;
+}
+
+.mini-games button:hover {
+    background-color: #1e7e34;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    section {
+        width: 90%;
+    }
+    input[type="text"] {
+        width: 100%;
+    }
 }
