@@ -45,22 +45,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ✅ Fetch Latest News (Fixing CORS Issue)
     async function fetchNews() {
-        try {
-            const response = await fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://api.currentsapi.services/v1/latest-news?apiKey=YOUR_NEWS_API_KEY"));
-            if (!response.ok) throw new Error("Failed to fetch news");
+    const apiKey = "0VX2xlHQP_IsvrhAQ5InCk7AJT1OSgGG2ZUjp5yUQhk2qV5E"; // Replace this with your actual API key
+    const url = `https://api.currentsapi.services/v1/latest-news?apiKey=${apiKey}`;
 
-            const data = await response.json();
-            const newsContainer = document.getElementById("newsSection");
-            let articles = JSON.parse(data.contents).news;
-
-            newsContainer.innerHTML = articles.slice(0, 5).map(article =>
-                `<p><a href="${article.url}" target="_blank">${article.title}</a></p>`
-            ).join("");
-        } catch (error) {
-            console.error("Error fetching news:", error);
-            document.getElementById("newsSection").innerHTML = "<p>Unable to fetch news. Try again later.</p>";
+    try {
+        let response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
+        let data = await response.json();
+        console.log(data); // Debugging: check if data is retrieved
+    } catch (error) {
+        console.error("Error fetching news:", error);
     }
+}
 
-    fetchNews();
+fetchNews();
+
 });
