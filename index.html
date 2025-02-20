@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elderly AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your AI Assistant</h1>
+    </header>
+    
+    <section id="chatbot">
+        <h2>AI Chat</h2>
+        <div id="chatbox"></div>
+        <input type="text" id="userInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+    </section>
+
+    <section id="voice">
+        <h2>Voice Assistant</h2>
+        <button onclick="startListening()">Start Voice Assistant</button>
+        <p id="voiceOutput"></p>
+    </section>
+
+    <section id="reminders">
+        <h2>Set Reminders</h2>
+        <input type="text" id="reminderInput" placeholder="Enter reminder" />
+        <button onclick="setReminder()">Set Reminder</button>
+        <ul id="reminderList"></ul>
+    </section>
+
+    <section id="emergency">
+        <h2>Emergency Call</h2>
+        <a href="tel:911" class="emergency-button">Call 911</a>
+    </section>
+
+    <section id="news">
+        <h2>Latest News</h2>
+        <ul id="newsFeed"></ul>
+    </section>
+
+    <section id="minigames">
+        <h2>Mini Games</h2>
+        <button onclick="playGame()">Play Game</button>
+        <p id="gameResult"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
